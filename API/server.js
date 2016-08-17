@@ -42,8 +42,8 @@ app.use(bodyParser.urlencoded({
  *          paramType: query
  *          required: false
  *          dataType: number
- *        - name: skip
- *          description: Skip
+ *        - name: take
+ *          description: take
  *          paramType: query
  *          required: false
  *          dataType: number
