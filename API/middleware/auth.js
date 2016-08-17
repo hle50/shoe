@@ -8,9 +8,10 @@ module.exports  = function(){
       }
       if(!req.headers || !req.headers.appkey || !req.headers.appsecret || req.headers.appkey !== settings.appKey
       || req.headers.appsecret !== settings.appSecret){
-        res.status(400).send('Authorization failed');
+        res.status(400).end('Authorization failed');
+      }else{
+        next();
       }
-      next();
     }
   }
 };
