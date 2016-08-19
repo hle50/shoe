@@ -10,5 +10,5 @@
 angular.module('dkmApp')
   .controller('HomeCtrl', function () {
 
-    debugger;
+
   });
