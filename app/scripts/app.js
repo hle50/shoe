@@ -2,18 +2,16 @@
 
 /**
  * @ngdoc overview
- * @name xxxxApp
+ * @name dkmApp
  * @description
- * # xxxxApp
+ * # dkmApp
  *
  * Main module of the application.
  */
 angular
-  .module('xxxxApp', [
+  .module('dkmApp', [
     'ngAnimate',
-    'ngAria',
     'ngCookies',
-    'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',
@@ -24,12 +22,17 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
+        controllerAs: 'vm'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        controllerAs: 'about'
+        controllerAs: 'vm'
+      })
+      .when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'RegisterCtrl',
+        controllerAs: 'vm'
       })
       .otherwise({
         redirectTo: '/'
