@@ -1,4 +1,4 @@
-var settings = require('./config/settings');
+var settings = require('../config/settings');
 
 module.exports = {
   basicAuth: function (req, res, next) {
