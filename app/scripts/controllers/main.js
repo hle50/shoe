@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the dkmApp
  */
-angular.module('dkmApp')
+angular.module('shoeApp')
   .controller('MainCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
