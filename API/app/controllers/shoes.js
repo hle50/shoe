@@ -1,5 +1,6 @@
 var processor = require('../processor')();
 var Shoes = require('../models/shoes');
+var _ = require('lodash');
 var shoeService = require('../services/shoes')(Shoes);
 
 
@@ -18,10 +19,13 @@ var createNew = function (req, res) {
   shoeData.viewsCount = 0;
   shoeData.votes = 0;
 
-  var result = Shoes.create(shoeData).then(function (resp) {
-    res.status(201).send();
-  }, function () {
-    res.status(500).send();
+  var result = Shoes.create(shoeData, function (err, resp) {
+    if (err) {
+      var errMsgs = _.map(err.errors, 'message');
+      processor.error(req, res, errMsgs);
+      return;
+    }
+    processor.render(req, res, resp);
   });
 
 };
