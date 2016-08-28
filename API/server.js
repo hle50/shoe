@@ -14,8 +14,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-
-var routes = require('./app/routes')(app);
+var routes = require('./app/routes/index')(app);
 
 app.listen(PORT, function () {
   console.log('Express is running on ' + PORT);
