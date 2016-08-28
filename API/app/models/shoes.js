@@ -15,8 +15,9 @@ var shoesSchema = new Schema({
     min: [0, 'Price is invalid']
   },
   createdDate: Date,
+  lastUpdated: Date,
   viewsCount: Number,
   votes: Number,
   imageUrl: String
-});
+}, {strict: true});
 module.exports = db.model('Shoes', shoesSchema);
